@@ -2,30 +2,22 @@
 
 Thanks for helping keep Awesome Agent Apps useful and current.
 
-## What belongs here
+## What belongs in the candidate ledger
 
-- A person can try or install the product, or a team can deploy it as an application.
-- The product uses an AI agent to carry out a multi-step task, use tools, or act within a defined workflow.
-- A public product page, documentation page, or source repository identifies the project.
-- Hosted and self-hosted products are both welcome. Commercial products are welcome too.
-- Agent app builders and workflow products belong in the work agents and automation category.
-
-SDKs, model APIs, agent frameworks without a runnable application, research papers, and idea-only projects do not belong in the directory.
+Add candidates broadly when a public source connects them to AI agents. Apps, builders, SDKs, frameworks, demos, abandoned experiments, rough launches, clones, and false positives may all be retained for triage. Use the category and status fields to distinguish what they are. A discovery is not an endorsement or proof that a project works.
 
 ## Sources and descriptions
 
-- Link to the canonical product page and public source repository when available.
-- An X post can surface a project or provide a release link. Confirm the product on its own website, documentation, or runnable public repository before adding it.
-- Keep the summary to one short sentence in your own words. Do not copy marketing claims or repeat unsupported claims about quality, safety, or performance.
-- The X column is for a public post that materially helped discover or verify the entry. Leave it blank when no useful post is available.
-- Do not add private messages, personal data, or claims that cannot be checked from public sources.
+For a quick community contribution, add a row to [`data/leads.csv`](data/leads.csv) with the app name, source (`web_search`, `x_post`, or `community_submission`), and public source URL, then run `python scripts/ingest_leads.py`. Include canonical site and repository URLs when available. Keep a short summary in your own words and preserve uncertainty. Do not add private messages or personal data.
+
+An X post or web search result can be a discovery lead. Keep its original public URL, and leave the record `discovered` until a canonical product or project page is checked. Do not treat post text, stars, or marketing claims as proof of behavior, safety, or quality.
 
 ## Keep the files in sync
 
-1. Add or update the entry in both `README.md` and `apps.csv`.
-2. Keep entries alphabetical by name within each README category and by name in the CSV.
-3. Use the existing CSV columns and quote any field that contains commas or quotation marks.
-4. Set `checked_on` to the day you opened the canonical product or repository page. A checked date does not mean the app was run or independently tested.
-5. Update category headings if a new category is needed; avoid making a category for a single entry when an existing one fits.
+1. Add or update a lead in `data/leads.csv` or refresh one of the machine-readable sources.
+2. Keep `data/curated-seed.csv` for the small manually checked set shown in the README; the generated root `apps.csv` and `data/apps.jsonl` are the broad candidate index.
+3. Record the source query, URL, and date. Mark runtime evaluation only after following a repeatable product flow and saving evidence links.
+4. Preserve low-signal entries with objective flags and a review reason. Do not delete an entry only because it looks rough, unpopular, or abandoned.
+5. Do not paste full X posts, private messages, or long copyrighted descriptions into the catalog. Store short summaries and links.
 
 Please include source links in pull requests so maintainers can review the entry quickly.

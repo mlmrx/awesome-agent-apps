@@ -1,0 +1,18 @@
+{
+  "source": "X public posts",
+  "search_url": "https://x.com/search",
+  "ingestion": "manual public-link leads in data/leads.csv",
+  "queries": [
+    "\"AI agent\" filter:links -filter:replies",
+    "\"agent app\" filter:links -filter:replies",
+    "\"coding agent\" filter:links -filter:replies",
+    "\"browser agent\" filter:links -filter:replies",
+    "\"personal agent\" filter:links -filter:replies",
+    "\"AI agent launch\" filter:links -filter:replies"
+  ],
+  "notes": [
+    "Only public post URLs are retained as discovery leads; do not copy private content or treat post claims as verified facts.",
+    "Search-engine summaries of X posts are not used as evidence. Link to the actual post and a canonical product page where available.",
+    "This repository does not crawl X automatically. Public post links are collected as manual leads through data/leads.csv."
+  ]
+}

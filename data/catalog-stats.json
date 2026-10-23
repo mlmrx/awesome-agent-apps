@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-10-23T03:47:13Z",
+  "record_count": 9373,
+  "unique_id_count": 9373,
+  "source_counts": {
+    "curated_seed": 9,
+    "github_repository_search": 4098,
+    "huggingface_spaces_search": 5265,
+    "x_post": 1
+  },
+  "discovery_channel_counts": {
+    "curated_seed": 15,
+    "github_repository": 12,
+    "github_repository_search": 4816,
+    "huggingface_spaces_search": 5803,
+    "web_product_page": 16,
+    "x_post": 3
+  },
+  "category_counts": {
+    "Agent applications": 2035,
+    "Agent frameworks": 77,
+    "Agent platforms": 1525,
+    "Autonomous agents": 178,
+    "Browser agents": 343,
+    "Coding agents": 772,
+    "Coding and building software": 4,
+    "Computer-use agents": 297,
+    "Multi-agent systems": 1064,
+    "Personal and local agents": 4,
+    "Personal assistants": 1456,
+    "Research agents": 670,
+    "Research and workplace knowledge": 3,
+    "Tool-using agents": 174,
+    "Voice agents": 590,
+    "Work agents and automation": 4,
+    "Workflow agents": 177
+  },
+  "discovered_count": 2441,
+  "needs_review_count": 6916,
+  "canonical_page_checked_count": 16,
+  "records_with_low_signal_flags": 7711,
+  "records_with_x_discovery_url": 3,
+  "metadata_triaged_count": 9373,
+  "hands_on_evaluated_count": 0
+}

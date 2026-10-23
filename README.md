@@ -1,10 +1,14 @@
 # Awesome Agent Apps
 
-A source-linked directory of AI agent applications people can try, use, or run themselves.
+A source-linked directory of AI agent applications, projects, and discovery leads people can inspect, try, or run themselves.
 
-This list covers coding agents, personal assistants, browser agents, research tools, workplace agents, and platforms for building agent applications. It includes hosted products and open-source projects. The initial directory is curated rather than exhaustive.
+This project is an evidence ledger, not a winners list. We collect candidates broadly across GitHub, the web, and X, including unfinished projects, clones, abandoned experiments, low-effort launches, and records that may turn out not to be agent apps. We classify what each source actually supports and evaluate quality only when evidence exists. A discovery record is not an endorsement or proof that an app works.
 
-**Source pages checked:** 2026-10-22. This checks that canonical pages are reachable; it does not mean the apps were installed or run.
+**Starter examples checked:** 2026-10-22. The broad candidate index has separate discovery and evidence labels; a search match does not mean its page was opened, app was installed, or workflow was run.
+
+## Curated examples
+
+These examples have a canonical product or project page checked. The full, much larger candidate index is in [`apps.csv`](apps.csv) and [`data/apps.jsonl`](data/apps.jsonl). The index intentionally retains low-signal records for review.
 
 ## Directory
 
@@ -55,10 +59,24 @@ This list covers coding agents, personal assistants, browser agents, research to
 - **X** links to a public post that helped surface the project. Social posts are discovery leads; the product description is checked against the project's own page or repository.
 - A checked date means the linked canonical page was opened on that date. It does not mean the app was installed, run, or independently evaluated.
 
-The machine-readable list is [`apps.csv`](apps.csv). Additions and corrections are welcome through [CONTRIBUTING.md](CONTRIBUTING.md).
+The machine-readable directory is [`apps.csv`](apps.csv); the richer JSONL records preserve discovery provenance and evaluation fields. The latest [catalog counts](data/catalog-stats.json) distinguish discoveries, low-signal records, and hands-on evaluations. The initial manually checked examples are in [`data/curated-seed.csv`](data/curated-seed.csv). Community web and X leads can be added through [`data/leads.csv`](data/leads.csv). See the [classification and evaluation rubric](data/evaluation-rubric.md), [record schema](schemas/app.schema.json), and [GitHub](data/sources/github-search.json), [Hugging Face Spaces](data/sources/huggingface-search.json), [web](data/sources/web-search.json), and [X](data/sources/x-search.json) discovery manifests.
 
-This directory is not an endorsement, security audit, or guarantee that a product remains available. Features, pricing, access, and licensing can change; check the linked project before relying on those details.
+## Refreshing the catalog
+
+With Python 3.11 and GitHub CLI authenticated, run `python scripts/refresh_catalog.py`. It queries public GitHub repositories, public Hugging Face Spaces, merges community web/X leads and evidence-linked app reviews, and rebuilds metadata triage and counts. Add review rows to [`data/evaluations.csv`](data/evaluations.csv) using the [evaluation rubric](data/evaluation-rubric.md); runtime scores require a named task, result summary, and evidence URL. The GitHub Actions workflow can also be run manually from the Actions tab. Web search and X posts remain link-based leads in `data/leads.csv` so each discovery keeps its original public URL.
+
+### Evidence labels
+
+- `discovered`: a source matched a discovery query; the app itself has not been checked.
+- `needs_review`: automated triage found weak matches or multiple observable warning signals; the record stays in the index.
+- `canonical_page_checked`: a product or project page was reachable when checked.
+- `metadata_only`: the classification uses public listing metadata only.
+- `runtime_evaluated`: someone recorded a repeatable hands-on evaluation with evidence links.
+
+Automated low-signal flags are observable metadata (for example, an archived repository or no declared license). They are screening clues, not a declaration that a project is “AI slop.” Keep questionable records and mark why they need review; do not silently remove them.
+
+This directory is not an endorsement, security audit, or guarantee that a product remains available. Search coverage is incomplete and query-dependent. GitHub metadata cannot establish that software works, is safe, or is a complete app. Features, pricing, access, and licensing can change; check the linked project before relying on those details.
 
 ## License
 
-The original directory text and metadata are dedicated to the public domain under [CC0 1.0 Universal](LICENSE). Linked projects, names, marks, and software remain subject to their respective owners' terms.
+Our original directory text, annotations, and compilation are dedicated to the public domain under [CC0 1.0 Universal](LICENSE). Source-supplied names, descriptions, tags, and metadata remain attributable to their publishers; linked projects, marks, and software remain subject to their respective owners' terms.

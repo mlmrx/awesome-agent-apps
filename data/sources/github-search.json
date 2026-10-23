@@ -1,0 +1,40 @@
+{
+  "source": "GitHub repository search",
+  "api": "https://api.github.com/search/repositories",
+  "generated_by": "scripts/harvest_github.py",
+  "queries": [
+    {"query": "topic:ai-agent", "category": "Agent platforms"},
+    {"query": "topic:ai-agents", "category": "Agent platforms"},
+    {"query": "topic:llm-agent", "category": "Agent platforms"},
+    {"query": "topic:agentic-ai", "category": "Agent platforms"},
+    {"query": "topic:autonomous-agent", "category": "Autonomous agents"},
+    {"query": "topic:multi-agent", "category": "Multi-agent systems"},
+    {"query": "topic:ai-assistant", "category": "Personal assistants"},
+    {"query": "topic:personal-assistant", "category": "Personal assistants"},
+    {"query": "topic:coding-agent", "category": "Coding agents"},
+    {"query": "topic:browser-agent", "category": "Browser agents"},
+    {"query": "topic:voice-agent", "category": "Voice agents"},
+    {"query": "topic:computer-use", "category": "Computer-use agents"},
+    {"query": "topic:agent-framework", "category": "Agent frameworks"},
+    {"query": "agent in:name,description", "category": "Agent platforms"},
+    {"query": "agentic in:name,description", "category": "Agent platforms"},
+    {"query": "\"AI agent\" in:name,description", "category": "Agent platforms"},
+    {"query": "\"coding agent\" in:name,description", "category": "Coding agents"},
+    {"query": "\"browser agent\" in:name,description", "category": "Browser agents"},
+    {"query": "\"research agent\" in:name,description", "category": "Research agents"},
+    {"query": "\"voice agent\" in:name,description", "category": "Voice agents"},
+    {"query": "\"workflow agent\" in:name,description", "category": "Workflow agents"},
+    {"query": "\"computer use\" agent in:name,description", "category": "Computer-use agents"},
+    {"query": "\"multi-agent\" in:name,description", "category": "Multi-agent systems"},
+    {"query": "\"personal assistant\" llm in:name,description", "category": "Personal assistants"},
+    {"query": "\"agent app\" in:name,description", "category": "Agent applications"},
+    {"query": "\"MCP agent\" in:name,description", "category": "Tool-using agents"}
+  ],
+  "notes": [
+    "Every request adds the explicit is:public qualifier; private repositories are out of scope.",
+    "GitHub search results are discovery candidates, not verified applications.",
+    "The refresh command sorts by relevance and recent update to balance established projects with new low-traction candidates.",
+    "Each query is capped at 1,000 results by GitHub Search; pagination and rate limits apply.",
+    "The query terms and collection timestamp are stored per record for auditability."
+  ]
+}

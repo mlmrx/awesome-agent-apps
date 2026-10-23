@@ -1,0 +1,25 @@
+{
+  "source": "Hugging Face Spaces search",
+  "api": "https://huggingface.co/api/spaces",
+  "generated_by": "scripts/harvest_huggingface_spaces.py",
+  "queries": [
+    {"query": "agent", "category": "Agent applications"},
+    {"query": "AI agent", "category": "Agent applications"},
+    {"query": "agentic", "category": "Agent platforms"},
+    {"query": "autonomous agent", "category": "Autonomous agents"},
+    {"query": "coding agent", "category": "Coding agents"},
+    {"query": "browser agent", "category": "Browser agents"},
+    {"query": "research agent", "category": "Research agents"},
+    {"query": "multi-agent", "category": "Multi-agent systems"},
+    {"query": "voice agent", "category": "Voice agents"},
+    {"query": "AI assistant", "category": "Personal assistants"},
+    {"query": "computer use", "category": "Computer-use agents"},
+    {"query": "tool use agent", "category": "Tool-using agents"}
+  ],
+  "notes": [
+    "Private Spaces are excluded from the catalog.",
+    "Spaces results are hosted demo/application candidates, not verified agent apps.",
+    "The public endpoint returns at most 1,000 results per query in this collector.",
+    "Hugging Face Space records are retained with the source page and listing metadata."
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mlmrx/awesome-agent-apps/blob/main/schemas/app.schema.json",
+  "title": "Awesome Agent Apps candidate record",
+  "type": "object",
+  "required": ["id", "name", "category", "source", "source_url", "first_seen", "last_seen", "status", "evidence_level", "evaluation", "discoveries"],
+  "properties": {
+    "id": {"type": "string"},
+    "name": {"type": "string", "minLength": 1},
+    "category": {"type": "string"},
+    "summary": {"type": ["string", "null"]},
+    "website_url": {"type": ["string", "null"], "format": "uri"},
+    "repository_url": {"type": ["string", "null"], "format": "uri"},
+    "x_discovery_url": {"type": ["string", "null"], "format": "uri"},
+    "source": {"type": "string"},
+    "source_url": {"type": "string", "format": "uri"},
+    "source_query": {"type": ["string", "null"]},
+    "first_seen": {"type": "string", "format": "date-time"},
+    "last_seen": {"type": "string", "format": "date-time"},
+    "source_updated_at": {"type": ["string", "null"], "format": "date-time"},
+    "discoveries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source", "source_url", "first_seen", "last_seen"],
+        "properties": {
+          "source": {"type": "string"},
+          "source_url": {"type": "string", "format": "uri"},
+          "query": {"type": ["string", "null"]},
+          "first_seen": {"type": "string", "format": "date-time"},
+          "last_seen": {"type": "string", "format": "date-time"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "status": {"enum": ["discovered", "canonical_page_checked", "runtime_evaluated", "needs_review", "rejected"]},
+    "evidence_level": {"enum": ["discovery_only", "metadata_only", "canonical_page_checked", "runtime_evaluated"]},
+    "classification_confidence": {"enum": ["low", "medium", "high"]},
+    "candidate_type": {"enum": ["app_candidate", "framework_or_sdk", "demo_or_template", "research_or_benchmark", "unclear", "unclassified"]},
+    "metadata_assessment": {
+      "type": "object",
+      "properties": {
+        "candidate_relevance_score": {"type": ["integer", "null"], "minimum": 0, "maximum": 4},
+        "metadata_completeness_score": {"type": ["integer", "null"], "minimum": 0, "maximum": 4},
+        "maintenance_signal_score": {"type": ["integer", "null"], "minimum": 0, "maximum": 4},
+        "candidate_relevance_reasons": {"type": "array", "items": {"type": "string"}},
+        "measured_at": {"type": "string", "format": "date-time"},
+        "notes": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "tags": {"type": "array", "items": {"type": "string"}},
+    "metadata": {"type": "object"},
+    "low_signal_flags": {"type": "array", "items": {"type": "string"}},
+    "review_reason": {"type": ["string", "null"]},
+    "evaluation": {
+      "type": "object",
+      "required": ["agent_capability", "app_readiness", "documentation", "maintenance", "safety_and_control", "user_experience", "evidence_urls", "evaluated_at"],
+      "properties": {
+        "agent_capability": {"type": ["integer", "null"], "minimum": 0, "maximum": 4},
+        "app_readiness": {"type": ["integer", "null"], "minimum": 0, "maximum": 4},
+        "documentation": {"type": ["integer", "null"], "minimum": 0, "maximum": 4},
+        "maintenance": {"type": ["integer", "null"], "minimum": 0, "maximum": 4},
+        "safety_and_control": {"type": ["integer", "null"], "minimum": 0, "maximum": 4},
+        "user_experience": {"type": ["integer", "null"], "minimum": 0, "maximum": 4},
+        "evidence_urls": {"type": "array", "items": {"type": "string", "format": "uri"}},
+        "evaluated_at": {"type": ["string", "null"], "format": "date-time"},
+        "notes": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "evaluation_history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["reviewer_handle", "evaluated_at", "evaluation_mode", "evidence_urls"],
+        "properties": {
+          "reviewer_handle": {"type": "string"},
+          "evaluated_at": {"type": "string", "format": "date-time"},
+          "evaluation_mode": {"enum": ["doc_review", "runtime_task"]},
+          "app_version": {"type": ["string", "null"]},
+          "task_name": {"type": ["string", "null"]},
+          "result_summary": {"type": ["string", "null"]},
+          "agent_capability": {"type": ["integer", "null"], "minimum": 0, "maximum": 4},
+          "app_readiness": {"type": ["integer", "null"], "minimum": 0, "maximum": 4},
+          "documentation": {"type": ["integer", "null"], "minimum": 0, "maximum": 4},
+          "maintenance": {"type": ["integer", "null"], "minimum": 0, "maximum": 4},
+          "safety_and_control": {"type": ["integer", "null"], "minimum": 0, "maximum": 4},
+          "user_experience": {"type": ["integer", "null"], "minimum": 0, "maximum": 4},
+          "evidence_urls": {"type": "array", "items": {"type": "string", "format": "uri"}},
+          "notes": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

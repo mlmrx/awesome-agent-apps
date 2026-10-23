@@ -1,0 +1,15 @@
+{
+  "source": "Public web and product pages",
+  "ingestion": "canonical links and community discovery leads in data/leads.csv",
+  "search_entrypoints": [
+    "https://www.google.com/search?q=AI+agent+app",
+    "https://www.bing.com/search?q=AI+agent+app",
+    "https://www.producthunt.com/search?q=AI%20agent",
+    "https://huggingface.co/spaces?search=agent"
+  ],
+  "notes": [
+    "Search results are discovery leads; preserve the result URL or query and confirm a canonical product page before claiming current availability.",
+    "Hugging Face Spaces are harvested by a separate public metadata adapter.",
+    "Search-engine coverage is ranked, incomplete, and not a measure of market share."
+  ]
+}
